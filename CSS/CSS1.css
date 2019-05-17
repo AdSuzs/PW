@@ -1,0 +1,15 @@
+p {
+	background: #C0C0C0;
+
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-right: 22px;
+	padding-left: 22px;
+
+	border: 10px solid black;
+
+	border-top-left-radius: 15px;
+	border-top-right-radius: 60px;
+	border-bottom-left-radius: 60px;
+	border-bottom-right-radius: 15px;
+}

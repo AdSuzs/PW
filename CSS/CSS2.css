@@ -1,0 +1,29 @@
+
+/* Seletor com Classe - Mais utilizado*/
+body{
+	background-color: #ffb6c1;
+	background-image: url(file:///home/suzany/PW/CSS2.jpg);
+	margin-right: 400px;
+	margin-left: 400px;
+	margin-top: 100px;
+
+}
+
+#div1{
+	text-align: center;
+	background-color: #fff0f2;
+	
+	border-width: 7px;
+	border-style: solid;
+	border-color: #cc919a;
+	border-radius: 10px 10px 10px 10px;
+	padding: 10px 16px 6px 12px ; 
+
+	opacity: 0.80;
+}
+
+
+/* Seletor com ID*/
+
+
+
