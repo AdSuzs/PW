@@ -1,0 +1,25 @@
+Erros de sintaxe: 
+
+Linha 04 - O formato do comentário está errado, em HTML não se faz comentários neste formato. A forma correta seria:
+    <!-- Isto é um comentário, não deve aparecer na página -->
+
+Linha 10 - O formato em CSS está incorreto, o seletor para a aplicação do estilo está incorreto. O seletor deveria ser da seguinte maneira:
+    #para{
+    background-color: blue;    
+    }
+
+Linha 15 - O formato do document não segue o padrão, deveria haver a tag body que indica o corpo da página logo depois da tag head. A estrutura apropriada seria:
+    ...
+    </head>
+    <body>
+        <h1> Instituto de Computação </h1>
+        ...
+    </body>
+    ...
+
+Linha 24 - O formato para a declaração do código em JavaScript está incorreto, a tag é script e não style (usada para CSS). A forma correta é: 
+    <script>
+        (function(){
+        ...
+        })
+    </script>

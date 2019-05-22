@@ -1,0 +1,4 @@
+Closure:
+É um método que permite o encapsulamento de uma variável, tornando-a privada. A partir da declaração de uma função dentro de outra função, isso acontece graças a definição do escopo. No código apresentado, a função foo retorna uma outra função que recebe parâmetro y, esta última função tem acesso a variável baz e x da função foo, mesmo que não esteja aparente no seu escopo local. 
+
+Quando a variável moo recebe a função foo(2), ocorre que moo vira uma referência à função function(y), desta forma, moo consegue acessar as variáveis de function(y). Por isso, compreendemos os valores que retornam em moo(1), pois o moo realiza faz acesso à variável y.

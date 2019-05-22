@@ -1,0 +1,9 @@
+Seletores:
+
+span{
+    color: brown;
+}
+
+span.cl1{
+    color: brown;
+}
