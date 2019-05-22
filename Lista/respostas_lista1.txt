@@ -1,0 +1,89 @@
+Questão 1:
+    1 - As tags <meta> vão dentro da <head>.
+
+    2 - Porque talvez o desenvolvedor queira colocar apenas uma parte da imagem, além disso ajustar a dimensão da imagem auxilia no carregamento da mesma. Assim os browsers saberão o espaço que a imagem vai ocupar na página, setando mais rapidamente seu layout.
+
+    3 - table.html
+
+    4 - Caracteres especiais são variáveis particulares da linguagem, devem ser utilizados quando deseja-serepresentar algum caractere que não pode ser apresentado no browser a não ser através dessas referências. Os códigos podem ser: Abreviações de palavras e números.
+
+    5 - O que são o working directory, o index e o repository? Além disso,
+para que servem os comandos git add e git commit representados nesse fluxo?
+    Working Directory, Index e Repositório representam as localidades dos arquivos;
+    Working Directory, é o workspace na máquina local;
+    Repository, é o workspace na núvem.
+    O index é a área de transição dos dados, como se fosse um cache.
+    Git ADD -> adicionar no repositórios os arquivos que desejar;
+    Git COMMIT -> consolidar as alterações realizadas no repositório.
+
+    6 - Estilos inline declaram o formato usando o atributo style do HTML 5 no mesmo arquivo html. Estilos inline não são capazes de separar o conteúdo da apresentação:
+    <p style="font-size: 14px; color: blue">
+        Teste
+    </p>
+    
+    Estilos embarcados, as diretrizes CSS são adicionadas ao conteúdo HTML atravéz da tag <style>. Adicionados no cabeçalho da página, entre <head>.
+    <style>
+        p {
+            font-size: 14px;
+            color: blue;
+        }
+    </style>
+
+    Estilos Sheets Externos, são arquivos que possuem apenas diretrizes CSS. úteis para a organização do projeto, e diferentes páginas podem usar o mesmo arquivo de estilo. Torna a navegação mais rápida por caisa do cacheamento do browser. Chamada no bloco head: 
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    Arquivo:css/1_styles.css:
+    p {
+        font-size: 14px;
+        color: blue;
+    }
+
+    7 - Muitas propriedades CSS requerem a especificação de um tamanho ou distância, para isso existem as unidades. 
+    absolutas: in - polegadas, cm - centímetros, mm - milímetros e pt - points;
+    relativas: medidas em relação ao tamanho de outros elementos da página: em - tamanho da fonte do elemento, px - quantidade de pixels CSS e % - valor de porcentafem do valor de outra propriedade. As unidades são utilizadas no css para indicar o tamanho ou distância, a unidade vem logo após o seu valor.
+
+    8 - pode ser
+    padding: 5px 0px 15px 10px
+    
+    9 - escudo.html e escudo.css
+
+    10 - O seletor por elemento a.
+
+    11 - Tipagem Dinâmica: tipos são associados a valores e não a variáveis.
+         var i = 1;
+         i = "a string";
+         i = new Date();
+    
+    12 - A sequencia de código adiciona dois botões na tela, onde um adiciona estilo à pagina (add),
+    e no outro este estilo é retirado (clean). O estilo é setado a partir da variável icomp. Então,
+    essa manipulação ocorre por meio dela. É realizado a captura do clique e dependendo do botão é
+    realizado a ação na variável.
+
+    13 - Vantagens da inclusão do código js de forma externa:
+    como o código em javascript tende a ser mais robusto, o ideal é que se mantenha ambientes limpos
+    para o touch and feel do próprio programador.
+
+    14 - botao.js e botao.html 
+
+    15 - vai dar erro, pq é  a está declarado em escopo local para o valor ser impresso o console.log deveria estar
+    dentro da função.
+
+    16 - sim, sofreu influência de hoisting, pois as variáveis e a outra função estão declarados abaixo do print. A função é visivel em qualquer lugar do escopo. Foi printado apenas o valor de foo, pois a variável 'a' não foi declarada.
+
+    17 - a linha: console.log(obj.prop.getFullname()); faz retornar o fullname declarado dentro do prop: Aurelio Rosa
+    A segunda linha retorna o nome John Doe, a primeira variável declarada. Porque a variável teste se apropriou da 
+    função getFullname o que retorna o fullname do escopo local e não das variáveis de dentro de prop.
+
+    18 - == é igualdade; === é igualdade de valor e tipo do valor.
+
+    19 - closures, é a gambiarra do js pra fazer variável privada.
+    É uma função que chama a outra, encapsulando o valor entre essas camadas de escopos.
+    A função foo encapsula o valor de baz, sendo assim a única forma de acesso a baz é pela 
+    segunda função ou pela closure. sendo que moo(1) é uma referencia a segunda função. o valor de x
+    só é setado quando ocorre a chamada var moo = foo;
+    Como a variável lembra de seu ambiente, N() continua com acesso ao escopo de F() 
+    – Isto é, a função N() - ou inner()- é a única forma de acesso à variável b a partir do escopo global
+    – Neste caso, a variável b funciona como uma espécie de variável privada de N()
+
+    20 - esfera.html e esfera.js
+
+    21 - 
