@@ -66,3 +66,7 @@ porém, coloca numa função? dentro do dino ou do obstáculo?
 - Excluir nuvens e obstáculos; --okay
 
 - Colocar a pontuação.
+tem os numerozinhos de 1 a 9, 
+como faz...
+pensei em colocar as imagens em ordem num vetor, pra ir trocando os sprites conforme o deserto andasse ia aumentando os números a esquerda;
+então vai ser preciso fazer a classe de score.

@@ -46,3 +46,12 @@
     position: absolute;
     z-index: 2;
 }
+
+.score{
+    width: 9px;
+    height: 15px;
+    background-image: url(sprites.png);
+    background-position-y: 2px;
+    position: absolute;
+    z-index: 1;
+}

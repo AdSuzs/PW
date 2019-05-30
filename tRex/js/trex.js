@@ -5,13 +5,15 @@
     const PROB_OBST = 5;
     var gameLoop;
     var deserto;
-       var dino;
+    var dino;
+    var score;
     var nuvens = [];
     var obstaculo = [];
 
     function init(){
         deserto = new Deserto();
         dino = new Dino();
+        score = new Score();
         gameLoop = setInterval(run, 1000/FPS); //seta o tempo para ele andar
     }
 
@@ -95,13 +97,55 @@
         this.element = document.createElement("div");
         this.element.className = "nuvem";
         this.element.style.right = "0px";
-        this.element.style.top = Math.floor(Math.random()*120) + "px";
+        this.element.style.top = Math.floor(Math.random()*100) + "px";
         deserto.element.appendChild(this.element);
     }
 
     Nuvem.prototype.mover = function(){
         this.element.style.right = (parseInt(this.element.style.right) + 1) + "px";
     }
+
+    function Score(){
+    	var num = [];
+    	// var names = ["num0", "num1", "num2", "num3", "num4", "num5", "num6", "num7","num8", "num9"];
+    	this.sprites = {
+    		'num0' : "-484px",
+            'num1' : "-495px",
+            'num2' : "-504px",
+            'num3' : "-514px",
+            'num4' : "-524px",
+            'num5' : "-534px",
+            'num6' : "-544px",
+            'num7' : "-554px",
+            'num8' : "-564px",
+            'num9' : "-574px"
+        };
+        var pos_right = 0;
+        for(var i = 0; i < 5; i++){
+	    	this.element = document.createElement("div");
+        	num.push(this);
+	    	num[i].element.className = "score";
+	    	num[i].element.style.backgroundPositionX = num[i].sprites.num0;
+	    	num[i].element.style.bottom = "120px";
+        	num[i].element.style.right = pos_right+"px";
+        	deserto.element.appendChild(num[i].element);
+        	pos_right = pos_right + 10;
+        }
+    }
+
+    // Score.prototype.rodar = function(){
+    // 	for(){
+    // 		for(){
+    // 			for(){
+    // 				for(){
+    // 					for(var e = 0; e < 10; e++){
+
+    // 					}
+    // 				}
+    // 			}
+    // 		}
+    // 	}
+    // }
 
     function DPassaro(){
         this.sprites = {
@@ -192,9 +236,9 @@
 
     
     function run () {
-        // dino.correr();
         if(dino.status != 5){
             dino.correr();
+
             deserto.mover();
     
             if (Math.floor(Math.random()*1000) <= PROB_NUVEM) {
