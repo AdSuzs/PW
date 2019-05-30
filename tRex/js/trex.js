@@ -2,7 +2,7 @@
 
     const FPS = 300;
     const PROB_NUVEM = 4;
-    const PROB_CACTO = 3;
+    const PROB_OBST = 5;
     var gameLoop;
     var deserto;
        var dino;
@@ -198,25 +198,35 @@
             deserto.mover();
     
             if (Math.floor(Math.random()*1000) <= PROB_NUVEM) {
+               	if(nuvens.length > 10){
+            		var index = nuvens.indexOf(nuvens[0]);
+                	nuvens.splice(index, 1); 	
+                }
                 nuvens.push(new Nuvem());
             }
             //Coloca um obstáculo aleatoriamente
-            if (Math.floor(Math.random()*1000) <= PROB_CACTO) {
-                //  var a = Math.floor(Math.random() * (2 - 1 + 1) + 1);
-                //  if(a == 1){
-                    // obstaculo.push(new Cacto());
-                // }
-                // if(a == 2){
+            if (Math.floor(Math.random()*10000) <= PROB_OBST) {
+                if(obstaculo.length > 15){
+            		var index = obstaculo.indexOf(obstaculo[0]);
+                	obstaculo.splice(index, 1); 	
+                }
+
+                console.log("tamanho do vetor ob: "+ obstaculo.length);
+
+                var a = Math.floor(Math.random() * (2 - 1 + 1) + 1);
+                if(a == 1){
+                    obstaculo.push(new Cacto());
+                }
+                if(a == 2){
                     obstaculo.push(new DPassaro());
-                // }
+                }
              }    
              //Adiciona as núvens
              nuvens.forEach(function (n) {
                  n.mover();
+                
              });
     
-            console.log("dino pos bottom "+dino.element.style.bottom);
-            console.log("dino pos right "+dino.element.style.right);
             obstaculo.forEach(function (c) {
                 c.mover();
                 var ob_posBott = parseInt(c.element.style.bottom);

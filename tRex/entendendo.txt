@@ -63,5 +63,6 @@ se alguma dimensão do dino for igual a uma das dimensões do obstáculo
 a ideia é que quando a posição do obstáculo for igual a do dino, ele pare.
 porém, coloca numa função? dentro do dino ou do obstáculo?
 
-- Excluir nuvens e obstáculos;
+- Excluir nuvens e obstáculos; --okay
+
 - Colocar a pontuação.
