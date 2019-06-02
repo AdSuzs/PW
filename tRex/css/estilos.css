@@ -14,10 +14,10 @@
 }
 
 .dino {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 47px;
     background-image: url(sprites.png);
-    background-position-y: -3px;
+    background-position-y: -2px;
     position: absolute;
     z-index: 3;
 }
