@@ -22,6 +22,24 @@
     z-index: 3;
 }
 
+.death_letra{
+    width: 191px;
+    height: 11px;
+    background-image: url(sprites.png);
+    background-position-y: -15px;
+    position: absolute;
+    z-index: 3;
+}
+
+.death_botao{
+    width: 36px;
+    height: 32px;
+    background-image: url(sprites.png);
+    background-position-y: -2px;
+    position: absolute;
+    z-index: 3;
+}
+
 .nuvem {
     width: 47px;
     height: 17px;
@@ -55,3 +73,4 @@
     position: absolute;
     z-index: 1;
 }
+

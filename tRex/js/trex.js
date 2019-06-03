@@ -10,7 +10,6 @@
     var score;
     var nuvens = [];
     var obstaculo = [];
-    var date;
     var max;
 
     function init(){
@@ -24,7 +23,6 @@
     }
 
     function day_night(){
-        console.log(deserto.element.style.backgroundColor);
         if(deserto.element.style.backgroundColor == "white"){
             deserto.element.style.backgroundColor = "black";
         }
@@ -109,12 +107,37 @@
             this.element.style.backgroundPositionX = (this.element.style.backgroundPositionX == this.sprites.agacha1)?this.sprites.agacha2:this.sprites.agacha1;
         }
         else if(this.status == 4){
-            this.element.style.backgroundPositionX = this.sprites.dead;
-            clearInterval(gameLoop);
+            this.element.style.backgroundPositionX = this.sprites.dead;          
         }
         else if(this.status == 5){
             this.element.style.backgroundPositionX = this.sprites.parado;
         }
+    }
+
+    function Death(){
+        this.sprites = {
+            "botaun" : "-2px",
+            "letra" : "-484px"
+        }
+        this.element = document.createElement("div");
+        this.element.className = "death_letra";
+        this.element.style.bottom = "80px";
+        this.element.style.right = "150px";
+        this.element.style.backgroundPositionX = this.sprites.letra;
+
+        this.botao = document.createElement("button");
+        this.botao.className = "death_botao";
+        this.botao.style.bottom = "35px";
+        this.botao.style.right = "230px";
+        this.botao.style.backgroundPositionX = this.sprites.botaun;
+        this.botao.addEventListener("click", function(){
+            console.log("e morreu");
+            setTimeout(window.parent.location.reload());
+        });    
+        
+        deserto.element.appendChild(this.element);
+        deserto.element.appendChild(this.botao);
+        
     }
 
     function Nuvem(){
@@ -255,59 +278,69 @@
     
     function run() {
         if(dino.status != 5){
-            dino.correr();
-            deserto.mover();
-            // score.rodar();
-            if (Math.floor(Math.random()*1000) <= PROB_NUVEM) {
-               	if(nuvens.length > 10){
-            		var index = nuvens.indexOf(nuvens[0]);
-                	nuvens.splice(index, 1); 	
+            if(dino.status != 4){
+                dino.correr();
+                deserto.mover();
+                // score.rodar();
+                if (Math.floor(Math.random()*1000) <= PROB_NUVEM) {
+                       if(nuvens.length > 10){
+                        var index = nuvens.indexOf(nuvens[0]);
+                        nuvens.splice(index, 1); 	
+                    }
+                    nuvens.push(new Nuvem());
                 }
-                nuvens.push(new Nuvem());
-            }
-            //Coloca um obstáculo aleatoriamente
-            if (Math.floor(Math.random()*10000) <= PROB_OBST) {
-                if(obstaculo.length > 15){
-            		var index = obstaculo.indexOf(obstaculo[0]);
-                	obstaculo.splice(index, 1); 	
-                }
-                var a = Math.floor(Math.random() * (2 - 1 + 1) + 1);
-                if(a == 1){
-                    obstaculo.push(new Cacto());
-                }
-                if(a == 2){
-                    obstaculo.push(new DPassaro());
-                }
-             }    
-             //Adiciona as núvens
-             nuvens.forEach(function (n) {
-                 n.mover();
-                
-             });
-    
-            obstaculo.forEach(function (c) {
-                c.mover();
-                var ob_posBott = parseInt(c.element.style.bottom);
-                var ob_posRight = parseInt(c.element.style.right);
-                var ob_tam = parseInt(c.element.style.width) - 5;
-                var di_posBott = parseInt(dino.element.style.bottom);
-                var di_posRight = parseInt(dino.element.style.right);
-    
-                if((ob_posRight + ob_tam > di_posRight && ob_posRight - ob_tam <= di_posRight) && ob_posBott == di_posBott){
-                    dino.status = 4;
-                }
-                else if((ob_posBott == 15 && di_posBott == 0) && (ob_posRight > di_posRight - 45 && ob_posRight <= di_posRight + 45)){
-                    dino.status = 4;
-                }
-                else if((ob_posBott == 50 && ob_posBott <= di_posBott + 40) && (ob_posRight > di_posRight - 45 && ob_posRight <= di_posRight + 45)){
-                    dino.status = 4;
-                }
-                else if((ob_posBott == 38 && di_posBott == 0) && dino.status == 0){
-                    if(ob_posRight > di_posRight - 30 && ob_posRight <= di_posRight + 30){
+                //Coloca um obstáculo aleatoriamente
+                if (Math.floor(Math.random()*10000) <= PROB_OBST) {
+                    if(obstaculo.length > 15){
+                        (nuvens[0].element).parentNode.removeChild(nuvens[0].element);
+                        nuvens.shift();
+                        var index = obstaculo.indexOf(obstaculo[0]);
+                        obstaculo.splice(index, 1); 	
+                    }
+                    var a = Math.floor(Math.random() * (2 - 1 + 1) + 1);
+                    if(a == 1){
+                        obstaculo.push(new Cacto());
+                    }
+                    if(a == 2){
+                        obstaculo.push(new DPassaro());
+                    }
+                 }    
+                 //Adiciona as núvens
+                 nuvens.forEach(function (n) {
+                     n.mover();
+                    
+                 });
+        
+                obstaculo.forEach(function (c) {
+                    c.mover();
+                    var ob_posBott = parseInt(c.element.style.bottom);
+                    var ob_posRight = parseInt(c.element.style.right);
+                    var ob_tam = parseInt(c.element.style.width) - 4;
+                    var di_posBott = parseInt(dino.element.style.bottom);
+                    var di_posRight = parseInt(dino.element.style.right);
+        
+                    if((ob_posRight + ob_tam > di_posRight && ob_posRight - ob_tam <= di_posRight) && ob_posBott == di_posBott){
                         dino.status = 4;
                     }
-                }
-            });
+                    else if((ob_posBott == 15 && di_posBott == 0) && (ob_posRight > di_posRight - 45 && ob_posRight <= di_posRight + 45)){
+                        dino.status = 4;
+                    }
+                    else if((ob_posBott == 50 && ob_posBott <= di_posBott + 45) && (ob_posRight > di_posRight - 45 && ob_posRight <= di_posRight + 45)){
+                        dino.status = 4;
+                    }
+                    else if((ob_posBott == 38 && di_posBott == 0) && dino.status == 0){
+                        if(ob_posRight > di_posRight - 30 && ob_posRight <= di_posRight + 30){
+                            dino.status = 4;
+                        }
+                    }
+                });
+
+            }
+            if(dino.status == 4){
+                clearInterval(gameLoop); 
+                clearInterval(troca); 
+                var death = new Death();
+            }
         }
     }
 

@@ -70,3 +70,15 @@ tem os numerozinhos de 1 a 9,
 como faz...
 pensei em colocar as imagens em ordem num vetor, pra ir trocando os sprites conforme o deserto andasse ia aumentando os números a esquerda;
 então vai ser preciso fazer a classe de score.
+
+
+Regras:
+1 - okay
+2 - 
+3 - okay
+4 - okay
+5 - okay
+6 - okay
+7 - okay
+8 - okay
+9 - okay
