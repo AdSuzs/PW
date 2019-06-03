@@ -315,7 +315,7 @@
                     c.mover();
                     var ob_posBott = parseInt(c.element.style.bottom);
                     var ob_posRight = parseInt(c.element.style.right);
-                    var ob_tam = parseInt(c.element.style.width) - 4;
+                    var ob_tam = parseInt(c.element.style.width) - 6;
                     var di_posBott = parseInt(dino.element.style.bottom);
                     var di_posRight = parseInt(dino.element.style.right);
         
