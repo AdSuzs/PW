@@ -80,29 +80,33 @@
             }
         }
         if(num%1000 == 0){
-            score.num[1].style.backgroundPositionX = numeritos[num_2];
+            score.num[0].style.backgroundPositionX = numeritos[0];
             num_2++;
+            score.num[1].style.backgroundPositionX = numeritos[num_2];            
             if(num_2 == 10){
                 num_2 = 1;
             }
         }
         if(num%10000 == 0){
-            score.num[2].style.backgroundPositionX = numeritos[num_3];
+            score.num[1].style.backgroundPositionX = numeritos[0];
             num_3++;
+            score.num[2].style.backgroundPositionX = numeritos[num_3];            
             if(num_3 == 10){
                 num_3 = 1;
             }
         }
         if(num%100000 == 0){
-            score.num[3].style.backgroundPositionX = numeritos[num_4];
+            score.num[2].style.backgroundPositionX = numeritos[0];            
             num_4++;
+            score.num[3].style.backgroundPositionX = numeritos[num_4];
             if(num_4 == 10){
                 num_4 = 1;
             }
         }
         if(num%1000000 == 0){
-            score.num[4].style.backgroundPositionX = numeritos[num_5];
+            score.num[3].style.backgroundPositionX = numeritos[0];
             num_5++;
+            score.num[4].style.backgroundPositionX = numeritos[num_5];
             if(num_5 == 10){
                 num_5 = 1;
             }
