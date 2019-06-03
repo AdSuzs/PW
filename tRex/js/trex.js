@@ -8,6 +8,13 @@
     var deserto;
     var dino;
     var score;
+    var numeritos = ["-484" ,"-495px", "-504px", "-514px", "-524px", "-534px", "-544px", "-554px","-564px", "-574px"];
+    var num = 0;
+    var num_1 = 0;
+    var num_2 = 0;
+    var num_3 = 0;
+    var num_4 = 0;
+    var num_5 = 0;
     var nuvens = [];
     var obstaculo = [];
     var max;
@@ -55,12 +62,50 @@
         this.chao.style.backgroundPositionX = "0px";
         this.element.appendChild(this.chao);
     }
-
+    
+    // baseado no score de Andrey de Oliveira :)
     Deserto.prototype.mover = function() {
+        num++;
         this.chao.style.backgroundPositionX = (parseInt(this.chao.style.backgroundPositionX) - max) + "px";
         if(parseInt(this.chao.style.backgroundPositionX) % 5000 == 0){
             max = max + 0.2;   
             this.chao.style.backgroundPositionX = (parseInt(this.chao.style.backgroundPositionX) - max) + "px";
+        }
+
+        if(num%100 == 0){
+            score.num[0].style.backgroundPositionX = numeritos[num_1];
+            num_1++;
+            if(num_1 == 10){
+                num_1 = 1;
+            }
+        }
+        if(num%1000 == 0){
+            score.num[1].style.backgroundPositionX = numeritos[num_2];
+            num_2++;
+            if(num_2 == 10){
+                num_2 = 1;
+            }
+        }
+        if(num%10000 == 0){
+            score.num[2].style.backgroundPositionX = numeritos[num_3];
+            num_3++;
+            if(num_3 == 10){
+                num_3 = 1;
+            }
+        }
+        if(num%100000 == 0){
+            score.num[3].style.backgroundPositionX = numeritos[num_4];
+            num_4++;
+            if(num_4 == 10){
+                num_4 = 1;
+            }
+        }
+        if(num%1000000 == 0){
+            score.num[4].style.backgroundPositionX = numeritos[num_5];
+            num_5++;
+            if(num_5 == 10){
+                num_5 = 1;
+            }
         }
     }
 
@@ -170,25 +215,6 @@
         }
     }
 
-    // Score.prototype.rodar = function(){
-    // 	var arr = ["-495px", "-504px", "-514px", "-524px", "-534px", "-544px", "-554px","-564px", "-574px"];
-    // 	for(var a = 0; a < 9; a++){
-    //         for(var b = 0; b < 9; b++){
-    //             for(var c = 0; c < 9; c++){
-    //                 for(var d = 0; d < 9; d++){
-    //                     for(var e = 0; e < 9; e++){
-    //                         this.num[0].style.backgroundPositionX = arr[e];
-    // 					}
-    //                     this.num[1].style.backgroundPositionX = arr[d];
-    // 				}
-    //                 this.num[2].style.backgroundPositionX = arr[c];
-    // 			}
-    //             this.num[3].style.backgroundPositionX = arr[b];
-    // 		}
-    //         this.num[4].style.backgroundPositionX = arr[a];
-    // 	}
-    // }
-
     function DPassaro(){
         this.sprites = {
             'voa1' : "-134px",
@@ -281,7 +307,6 @@
             if(dino.status != 4){
                 dino.correr();
                 deserto.mover();
-                // score.rodar();
                 if (Math.floor(Math.random()*1000) <= PROB_NUVEM) {
                        if(nuvens.length > 10){
                         var index = nuvens.indexOf(nuvens[0]);
