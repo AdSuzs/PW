@@ -1,3 +1,6 @@
+David: Todos os erros foram reportados corretamente
+Nota: 2.0
+
 Erros de sintaxe: 
 
 Linha 04 - O formato do comentário está errado, em HTML não se faz comentários neste formato. A forma correta seria:

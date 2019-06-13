@@ -1,3 +1,6 @@
+David: 2 seletores foram identificadores corretamente
+Nota: 1.4
+
 Seletores:
 
 span{
