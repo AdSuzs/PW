@@ -29,6 +29,9 @@ module.exports = {
         columnType: 'varchar(45)'
       },
   
+      user: {
+        model: 'User'
+      },
      
   
       //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗

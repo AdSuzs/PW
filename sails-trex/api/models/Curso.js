@@ -14,10 +14,9 @@ module.exports = {
   
       nome: {
         type: 'string',
-        required: true,
         description: 'Full representation of the user\'s name.',
-        maxLength: 120,
-        columnType: 'varchar(64)'
+        maxLength: 64,
+        columnType: 'VARCHAR(64)'
       },
   
       sigla: {
@@ -33,7 +32,9 @@ module.exports = {
         columnType: 'text'
       },
   
-     
+      user:{
+        model: 'User'
+      },
   
       //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
       //  ║╣ ║║║╠╩╗║╣  ║║╚═╗

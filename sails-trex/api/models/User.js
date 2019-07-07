@@ -42,7 +42,15 @@ module.exports = {
       columnType: 'int',
       description: 'Escolhe de acordo com teu curso'
     },
-    
+
+    jogadas: {
+      collection: 'Jogada',
+      via: 'user'
+    },
+
+    curso:{
+      model: 'Curso'
+    },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
