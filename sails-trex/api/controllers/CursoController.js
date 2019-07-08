@@ -8,7 +8,7 @@
 module.exports = {
   index: async function (req, res){
     let cursos = await Curso.find()
-    res.view('curso/index', {title: 'Curso', cursos})
+    res.view('curso/index', {cursos})
   },
 
   create: async function (req, res){

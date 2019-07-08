@@ -39,6 +39,8 @@ module.exports.routes = {
 
 
   'GET /account':            { action: 'account/view-account-overview' },
+  'GET /account/curso':      { action: 'account/selecionar-curso' },
+  'POST /account/curso':     { action: 'account/selecionar-curso' }, 
   'GET /account/password':   { action: 'account/view-edit-password' },
   'GET /account/profile':    { action: 'account/view-edit-profile' },
 
