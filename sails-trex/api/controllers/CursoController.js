@@ -36,7 +36,7 @@ module.exports = {
   },
 
   delete: async function (req, res){
-    let cursos = await Curso.destroy({id:'Carlos'})
+    let cursos = await Curso.destroy({id:req.me.id})
     res.view('curso/index', {title: 'Curso', cursos})
   },
 
