@@ -12,19 +12,18 @@ module.exports = {
   },
 
   create: async function (req, res){
-    res.view('curso/create')
-    if(){
-      try{
-        console.log(req.body);      
-        let {nome, sigla, descricao} = req.body
-        let cria = {nome, sigla, descricao}
-        let resultado = await Curso.create(cria)    
+      try{     
+        await Curso.create({
+          nome: req.body.nome,
+          sigla: req.body.sigla,
+          descricao: req.body.descricao
+        }); 
+        console.log(req.body)   
         res.redirect('/curso');
       }
       catch(err){
         console.log(err);
-      }
-    }    
+      }    
   },
 
   read: async function (req, res){

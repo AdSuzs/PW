@@ -12,22 +12,33 @@
     </div>
     <div class="row">
         <div class="col-sm">
-            <form action = "/curso" method="post">
+            <form action = "/curso" method="post" class="mt2">
                 <div class="form-group">
                   <label for="nome-do-curso">Nome do Curso</label>
-                  <input type="text" id="nome-do-curso" class="form-control" placeholder="Ciência da Computação">
+                  <% if(typeof nome != "undefined"){ %>
+                    <input type="text" id="nome" class="form-control" name="nome" placeholder="Ciência da Computação" value="<%= nome %>" required>
+                    
+                   <% }else{ %>
+                    <input type="text" id="nome" class="form-control" name="nome" placeholder="Ciência da Computação" required>
+                    <% } %>
                 </div>
                 <div class="form-group">
-                    <label for="sigla">Sigla do Curso</label>
-                    <input type="text" id="sigla" class="form-control" placeholder="IE01">
+                  <label for="sigla">Sigla do Curso</label>
+                    <% if(typeof nome != "undefined"){ %>
+
+                      <input type="text" id="sigla" class="form-control" name="sigla" placeholder="IE01"  value="<%= sigla %>" required>
+                      
+                     <% }else{ %>
+                      <input type="text" id="sigla" class="form-control" name="sigla" placeholder="IE01" required>                      
+                      <% } %>
                 </div>
                 <div class="form-group">
-                  <label for="descricao">Descrição</label>
-                  <textarea class="form-control" id="descricao" rows="3"></textarea>
+                  <label for="descricao" >Descrição</label>
+                  <textarea class="form-control" id="descricao" name="descricao" rows="3"></textarea>
                 </div>
+                <input type="hidden" name="_csrf" value="<%= _csrf %>">
+                <input type="submit" class="btn btn-success" value="Salvar">
             </form>
-            <input type="hidden" name="_csrf" value="<%= _csrf %>">
-            <input type="submit" class="btn btn-success" value="Salvar">
         </div>
     </div>    
   </div>

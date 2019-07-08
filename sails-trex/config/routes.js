@@ -30,9 +30,10 @@ module.exports.routes = {
   'GET /password/forgot':    { action: 'entrance/view-forgot-password' },
   'GET /password/new':       { action: 'entrance/view-new-password' },
 
+  'POST /curso':                { action: 'curso/create' },  
   'GET /curso':                 { action: 'curso/index' },
   'GET /curso/read/cursoId':    { action: 'curso/read' },
-  'GET /curso/create':          { action: 'curso/create' },
+  'GET /curso/create':          { action: 'view-create' },
   'GET /curso/update/CursoId':  { action: 'curso/update' },
   'GET /curso/delete/CursoId':  { action: 'curso/delete' },
 

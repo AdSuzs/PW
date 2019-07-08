@@ -21,7 +21,6 @@ module.exports = {
   
       sigla: {
         type: 'string',
-        required: true,
         description: 'Sigla do teu curso',
         columnType: 'char(4)',
         maxLength: 4
